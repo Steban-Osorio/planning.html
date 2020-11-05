@@ -1,69 +1,115 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Diaplay</title>
-	<style>
-		body
-		{
-			background-color:grey;
-		}
-	</style>
-</head>
-<body>
-	<img src="imagenes/mockup.png">
-	<h1 style="color:gold";>Display.</h1>
-	<p>
-		Esta propiedad puede tomar <strong>muchos valores diferentes</strong>, pero los mas comunes son estos tres:<br>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Display: inline, block, inline-block</title>
+    <style type="text/css">
+    * {
+        padding:0px;
+        margin::0px;
+      }
+      #menus{
+        margin:auto;
+        width:500px;
+        font-family:Arial, Helvetica, sans-serif;
+      }
 
-		<br><b>* block </b><br>
-		<p>
-			Hace que el comportamiento del elemento sea como un <b>bloque</b>.<br>
-		</p>
-		<b>* inline </b><br>
-		<p>
-			El elemento se renderizara <b>en linea</b> con otros elemento.<br>
-		</p>
-		<b>* inline-block </b><br>
-		<p>
-			El elemento tendra un <b>comportamiento mezcla</b> entre los dos anteriores.<br>
-		</p>
+      ul, ol {
+        list-style:none;
+      }
 
-	</p>
-	<h2>Diferencias entre Block, inline, inline-Block</h2>
-	<h3>Block (Display:Block;)</h3>
-	<h4>Elementos de bloque.</h4>
-	<p>
-		Ciertas etiquetas se renderizan en el navegador en lineas independientes, no mezcladas con el reto del texto. Ejemplos de estas etiquetas son los encabezados (< h1 > hasta </ h1 > ), las citas en bloque (< blockquote >), por supuesto los parrafos (< p ></ p >), y quiza la mas conocida de todas que es la es la etiqueta (< div >) usada normalmente para envolver a otros elementos.<br>
-		<strong>Estos elementos se les denomina (elementos de bloque).</strong><br>
+      .submenu li a {
+        background-color:#1074F3;
+        color:#fff;
+        text-decoration: none;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 10%;
+        padding:10px 15px;
+        display: block;
+
+      }
+      .submenu li a:hover {
+        background-color:#434343;
+      }
+      .submenu > li {
+        float:left;
+      }
+      .submenu li ul {
+        display:none;
+        position:absolute;
+        min-width:140px;
+      }
+      .submenu li:hover > ul {
+        display:block;
+      }
 
 
-	</p>
-	<img src="imagenes/ejem_block.png">
-	<img src="imagenes/block.png">
 
-	<h3>Iniline (Display:inline;)</h3>
-	<h4>Elementos en linea.</h4>
-	<p>
-		Para explicarlo de manera sencilla, y simplificando, ciertas etiquetas HTML <strong>no afectan en absoluto al flujo de los demas elementos</strong>, limitandose a marcar ciertos fragmentos con una determinada semantica y dejando que el texto y otros elementos contiguos sigan fluyendo en la misma linea, colocandose a ambos lados de dicho elemento.<br>
-		Ejemplos de estas etiquetas son: <strong>(< a >, < em >, < del > ...)</strong> y quiza la mas util de todas: <strong>(< span >)</strong>, que se usa para envolver elementos en-linea "inline"<br>
+    </style>
 
-	</p>
-	<img src="imagenes/ejem_inline.png">
-	<img src="imagenes/inline.png">
+  </head>
+  <body background="imagenes/fondo.png">
 
-	<h3>Inline-block (Display:inline-block;)</h3>
-	<h4>Elementos conbinados en linea + bloque.</h4>
-	<p>
-		Bien, aparte de este comportamiento por defecto, es posible <strong>cambiar el mmodo en el que se visualiza y/o renderiza cualquier elemento HTML </strong>de una pagina usando la propiedad CSS llamada  display.
-	</p>
-	<img src="imagenes/ejem_inline-block.png">
-	<img src="imagenes/inline-block.png">
+    <div id="menus">
+      <ul class ="submenu">
+        <li><a href="Inicio.html">Inicio</a></li>
+        <li><a href="">Conceptos</a>
+          <ul>
+            <li><a href="Inline.html">Inline</a></li>
+            <li><a href="block.html">Block</a></li>
+            <li><a href="Inline-block.html">Inline-block</a></li>
+          </ul>
+        </li>
 
-	<p>Como complemento de la informacion anterior ver el siguiente video.</p>
+        <li><a href="">Recursos</a>
+          <ul>
+            <li><a href="Multimedia.html">Video</a></li>
+            <li><a href="Galeria.html">Galeria</a></li>
+          </ul>
+        </li>
+      <li><a href="">Autoevaluacion</a></li>
 
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/DU9kY8kOu4s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <li><a href="Autor.html">Autor</a></li>
 
-	<p><b>Informacion tomada de la pagina: <a href="https://www.campusmvp.es/recursos/post/Que-diferencias-hay-entre-display-block-inline-e-inline-block-en-CSS.aspx">Campus MVP</a></b></p>
-	<p><b>Autor. Steban Osorio.</b></p>
-</body>
+    </ul>
+
+  </div>
+
+
+  <style type="text/css">
+  .caja{
+    align:"left";
+    background-color:"coffe.jpg" ;
+    border: 1px solid black;
+    widht: 100px;
+    height: 500px;
+    padding: 10px;
+    margin:50px 10px;
+  }
+  span{
+    display:inline-block;
+  }
+
+  </style>
+  <p><br>
+  <span ><h1>Bienvenidos.</h1>
+    <p class="caja">
+      En esta pagina encontraremos una explicacion detallada de la propiedad CSS llamada <b>display</b>.<br>
+      Esta propiedad puede  tomar <b>muchos valores diferentes</b>, pero los mas comunes con estos tres:<br><br>
+
+      <b>block:</b> hace que el comportamiento del elemento sea como un bloque.<br>
+      <b>inline:</b> el elemento se renderizará en línea con otros elementos.<br>
+      <b>inline-block:</b> el elemento tendrá un comportamiento mezcla entre los dos anteriores, que ahora voy a describir.<br>
+      <br><img src="imagenes/will.jpg"></img><br>
+      <img src="imagenes/logoUNAD.png"></img>
+
+
+    </p>
+  <span>
+
+
+
+  </body>
 </html>
